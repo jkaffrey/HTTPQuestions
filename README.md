@@ -54,9 +54,28 @@ JSON data structure of an array of values
 __HTTP Request/Response__
 
 * Name at least 4 http verbs
+```
+GET: when we want to get some information such as a web page.
+POST: for sending information such as a query.
+DELETE: to communicate with a server in order to remove a resource.
+PUT: updaing information
+```
 * What is each verb useful for in your own words
+```
+See above
+```
 * What does idempotent mean?
+```
+Meaning no matter how many times we call this 'thing' it will always return the same.
+```
 * Name the 5 http status code ranges.  What are they used for in general?
+```
+5--: errors
+4--: no information or error
+3--: not available here
+2--: success
+1--: processing
+```
 * If a server returns a http status code of 301 and a location of `https://www.google.com/`, what does the browser do?
 * For the following HTTP headers, decide if the following header is used for requests, responses or both:
 	* Accept

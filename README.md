@@ -3,17 +3,52 @@
 __URLs__
 
 * Name all of the parts of the url that you can remember.  In your own words describe what they do.
+```
+protocol: How the website goes about connecting via it be http, https, ftp, sftp, ssh, etc.
+port: the port that is connected through. Basically, the apartment within the building.
+domain: the web address (masked ip address) that you are attempting to connect to
+path: the location of the files on the server.
+query: the information that is being passed to the GET, POST, etc requets.
+anchor: where on the page you want to quick travel to.
+```
 * Name the pieces of the following urls:
 	* `https://www.google.com/`
+	```
+	  domain: google.com
+	```
 	* `https://workbook.galvanize.com/cohorts/41/learning_experiences/367`
+	```
+	  domain: galvanize.com
+	  path: cohorts/41/learning_experiences/367
+	```
 	* `http://locahost:5000/animals/puppies?onlycute=1&size=medium#firstpuppy`
+	```
+	  domain: localhost
+	  port: 5000
+	  path: animals/puppies
+	  query: onlycute=1&size=medium
+	  anchor: firstPuppy
+	```
 	* `https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_Error`
+	```
+	  domain: wikipedia
+	  path: wiki/List_of_HTTP_status_codes
+	  anchor: 4xx_Client_error
+	```
 * Can a server use more than 1 port?
+```
+Yes
+```
 * Why is https different than http?
+```
+HTTPS is a secure connection encrypted and secured through an SSL
+```
 * How does a server interpret the following url's query paramter.  What data structure does it create on the server?
 
 ```
 http://locahost:5000/animals?puppies=fido&puppies=max&puppies=moxie
+puppies: [ fido, max, moxie ]
+JSON data structure of an array of values
 ```
 
 __HTTP Request/Response__

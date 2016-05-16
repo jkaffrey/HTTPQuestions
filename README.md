@@ -77,16 +77,21 @@ Meaning no matter how many times we call this 'thing' it will always return the 
 1--: processing
 ```
 * If a server returns a http status code of 301 and a location of `https://www.google.com/`, what does the browser do?
+```
+navigates to google.com permanently
+```
 * For the following HTTP headers, decide if the following header is used for requests, responses or both:
-	* Accept
-	* Content-type
-	* User-agent
-	* Set-cookies
-	* Cache-control
-	* Cookie
+	* Accept ``` response ```
+	* Content-type ``` request ```
+	* User-agent ``` request ```
+	* Set-cookies ``` both ```
+	* Cache-control ``` request ```
+	* Cookie ``` both ```
 * Is the following a http request or response?  How do you know for each?
 
 ```
+--- A request. It is returning information
+
 HTTP/1.1 200 OK
 Access-Control-Allow-Origin: *
 Vary: Accept
@@ -127,6 +132,7 @@ Connection: keep-alive
 ```
 
 ```
+-- response, providing information
 DELETE /students/n1vmyrw3x HTTP/1.1
 Host: g22-students.herokuapp.com
 Accept: application/json
@@ -137,10 +143,21 @@ Postman-Token: 0041e3c3-efdb-f0c3-b2f4-2d79f6d0f44b
 __JSON__
 
 * Describe what JSON is.  What is it used for.
+```
+A file format for storing information in a readable way. 
+```
 * Convert the following map into a javascript object then console log the age.
 
 ```
 { "company" : "Github", "age": 7, "categories" : "Services,Internet,Software"}
+
+var info = {
+	company: "Github",
+	age: 7,
+	categories: [ "Services", "Internet", "Software" ]
+};
+
+console.log(info.age);
 ```
 * Convert the following to a javascript object.  Console log each company name.
 
@@ -151,6 +168,17 @@ __JSON__
               { "company": "Dropbox", "age": 11, "categories": "Cloud Data Services,Storage,Web Hosting"}
             ]
 }
+
+var objectMap = {
+	company: [ "Github", "Airbnb", "Square", "Dropbox" ],
+	age: [ 7, 6, 7, 11 ],
+	categories: [ ["Service", "Internet", Software"], ["Hotel", "Travel"], ["FinTech", "Hardware + Software", "Finance"] , ["Cloud Date Services", "Storage", "Web Hosting"]]
+}
+
+for (var name in objectMap.company) {
+
+    console.log(name);
+}
 ```
 * The following is javascript.  Convert the object to a string and console log it.
 
@@ -160,10 +188,25 @@ var myObj = {
   age: 3,
   categories: "Education"
 };
+
+--- JSON.stringify(myObj);
 ```
 __MISC__
 
 * Describe what DNS is.
+```
+Domain Name Service - a domain name manager
+```
 * In the terminal, type `man curl`.  Look at the man page for curl.  What do the following flags do? `-v`, `-X`.  (Hint: to search for a string, type `/` then the text you want, then enter.  To quit the man page, type `q`).
+```
+-v: be more verbose with output
+-X: use a custom request method
+```
 * What is TCP/IP?  How does it interact with HTTP?
+```
+It's the building blocks of HTTP and allows lower level computer to computer communication
+```
 * Does HTTP break the data that is being sent into small packets?  If not, what protocol is responsible for it?
+```
+Yes, IP
+```
